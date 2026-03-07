@@ -1,8 +1,3 @@
-
-
-// document.getElementById("login-btn").addEventListener('click',function(){
-    
-// })
 document.getElementById('login-btn').addEventListener('click',function(){
     const username = document.getElementById('username');
     const getUsername = username.value;
