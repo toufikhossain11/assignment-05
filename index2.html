@@ -24,6 +24,7 @@
      </style>
 </head>
 <body>
+  <!-- navbar -->
     <header>
  <div class="navbar bg-base-200 shadow-sm justify-between mb-[30px] items-center">
   <div class="flex gap-3 text-center">
@@ -37,7 +38,7 @@
          </div>
       </div>
     </header>
-
+  <!-- toggle-btn -->
     <section>
       <div class="navbar gap-3  bg-base-200 shadow-sm w-11/12 m-auto">
         <button id="tab-all" onclick="allTab()" class="btn  px-8">All</button>
@@ -45,7 +46,7 @@
         <button id="tab-close" onclick="closeTab()" class="btn  px-5">Closed</button>
       </div>
     </section>
-
+ <!-- count-btn -->
     <section>
       <div class="w-11/12 navbar bg-base-200 shadow-sm justify-between mt-[20px] m-auto ">
         <div class="flex items-center gap-3 justify-center">
@@ -87,15 +88,15 @@
         <p class="text-[#64748B]">1/15/2024</p>
       </div>
       </div>   -->
-      
+
     </section>
 
     <!-- modal -->
-     <section class="hidden">
-          <!-- Open the modal using ID.showModal() method -->
-    <button class="btn" onclick="my_modal_1.showModal()">open modal</button>
+     <section class="">
       <dialog id="my_modal_1" class="modal">
-  <div class="modal-box">
+        <div id="modal-continar"></div>
+        
+  <!-- <div class="modal-box">
     <h3 class="text-lg font-bold">Fix broken image uploads</h3>
 
     <div class="pt-3 flex items-center gap-2">
@@ -126,11 +127,10 @@
 
     <div class="modal-action">
       <form method="dialog">
-        <!-- if there is a button in form, it will close the modal -->
         <button class="btn btn-primary">Close</button>
       </form>
     </div>
-  </div>
+  </div> -->
       </dialog>
      </section>
      <script src="./script-js/main-page.js"></script>
