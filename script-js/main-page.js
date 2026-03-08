@@ -1,7 +1,9 @@
 // let currentTab ='all'
-// const tabActive = ['btn-primary','text-white'];
-// const tabInactive = ['text-slate-700','border-state-200','text-black'];
-
+const tabActive = ['btn-primary','text-white'];
+const tabInactive = ['text-slate-700','border-state-200','text-black'];
+// document.getElementById('tab-all').addEventListener('click',function(){
+  
+// })
 // function switchTab (tab){
 //     const tabs =["all","open","close"];
 //     currentTab=tab;
@@ -24,7 +26,14 @@ const allTab = ()=>{
     const p = 'https://phi-lab-server.vercel.app/api/v1/lab/issues';
     fetch(p)
    .then(referce=>referce.json())
-   .then(data=>displayPost(data.data))
+   .then(data=>displayPost(data.data));
+   //all-btn-toggle
+   const all = document.getElementById('tab-all');
+   const open = document.getElementById('tab-open');
+   const close = document.getElementById('tab-close');
+   open.classList.remove(...tabActive);
+   close.classList.remove(...tabActive);
+    all.classList.add(...tabActive);
   }
 
   const displayPost =(posts)=>{
@@ -105,7 +114,7 @@ const allTab = ()=>{
     const countNum=document.getElementById('count-number');
     countNum.innerText= cardContener.children.length;
 });
-  };
+  }
 allTab()
 
 // document.getElementById('tab-all').addEventListener('click',function (){
@@ -117,7 +126,14 @@ const openTab = ()=>{
     const p = 'https://phi-lab-server.vercel.app/api/v1/lab/issues';
     fetch(p)
    .then(referce=>referce.json())
-   .then(data=>openDisplayPost(data.data))
+   .then(data=>openDisplayPost(data.data));
+   //open-btn-toggl
+   const all = document.getElementById('tab-all');
+   const open = document.getElementById('tab-open');
+   const close = document.getElementById('tab-close');
+   all.classList.remove(...tabActive);
+   close.classList.remove(...tabActive);
+    open.classList.add(...tabActive);
 }
 
 const openDisplayPost =(posts)=>{
@@ -196,7 +212,14 @@ const closeTab = ()=>{
     const p = 'https://phi-lab-server.vercel.app/api/v1/lab/issues';
     fetch(p)
    .then(referce=>referce.json())
-   .then(data=>closeDisplayPost(data.data))
+   .then(data=>closeDisplayPost(data.data));
+   // close-btn-toggol
+  const open = document.getElementById('tab-open');
+  const close = document.getElementById('tab-close');
+  const all = document.getElementById('tab-all');
+  open.classList.remove(...tabActive);
+  all.classList.remove(...tabActive);
+  close.classList.add(...tabActive);
 }
 
 const closeDisplayPost =(posts)=>{
@@ -235,7 +258,7 @@ posts.forEach(post => {
   }
   
 });
-
+}
 
     // const cardContener =document.getElementById('card-contener');
     // cardContener.innerHTML="";
@@ -268,4 +291,3 @@ posts.forEach(post => {
     //     const countNum=document.getElementById('count-number');
     //     countNum.innerText= cardContener.children.length;
     //  });
-}
