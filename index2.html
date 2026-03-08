@@ -40,9 +40,9 @@
 
     <section>
       <div class="navbar gap-3  bg-base-200 shadow-sm w-11/12 m-auto">
-        <button class="btn btn-primary px-8">All</button>
-        <button class="btn btn-primary px-6">Open</button>
-        <button class="btn btn-primary px-5">Closed</button>
+        <button id="tab-all" onclick="allTab()" class="btn btn-primary  px-8">All</button>
+        <button id="tab-open" onclick="openTab()" class="btn  px-6">Open</button>
+        <button id="tab-close" onclick="closeTab()" class="btn  px-5">Closed</button>
       </div>
     </section>
 
@@ -52,23 +52,23 @@
           <img class="btn btn-circle btn-lg w-[40px] h-[40px]" src="./assets/Aperture.png" alt="">
         <div>
           <h4 class="text-[20px] font-semibold">
-          <span id="count-number">50</span> Issues</h4>
+          <span id="count-number">0</span> Issues</h4>
           <p class="text-[#64748B] text-[14px]">Track and manage your project issues</p>
         </div>
         </div>
         <div class="flex gap-2 items-center">
-          <i class="text-green-500 fa-solid fa-circle"></i>
+          <i class="text-green-500 fa-solid fa-circle text-[10px]"></i>
           <p>Open</p>
-          <i class="text-orange-600 fa-solid fa-circle"></i>
+          <i class="text-orange-600 fa-solid fa-circle text-[10px]"></i>
           <p>Closed</p>
         </div>
       </div>
 
     </section>
     <!-- card -->
-    <section class="w-11/12 navbar bg-base-200 shadow-sm m-auto mt-2 gap-5 grid md:grid-cols-4 sm:grid-cols-1  ">
+    <section id="card-contener" class="w-11/12 navbar bg-base-200 shadow-sm m-auto mt-2 gap-5 grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 ">
 
-          <div class="card bg-base-100 w-75 shadow-sm border-t-4 border-orange-600">
+          <!-- <div class="card bg-base-100 w-75 shadow-sm border-t-4 border-orange-600">
       <div class="card-body">
         <div class="flex justify-between">
           <img class="h-6 w-6" src="./assets/Open-Status.png" alt="">
@@ -86,7 +86,7 @@
         <p class="text-[#64748B]">#1by john_doe</p>
         <p class="text-[#64748B]">1/15/2024</p>
       </div>
-      </div>  
+      </div>   -->
       
     </section>
 
@@ -133,6 +133,6 @@
   </div>
       </dialog>
      </section>
-
+     <script src="./script-js/main-page.js"></script>
 </body>
 </html>
