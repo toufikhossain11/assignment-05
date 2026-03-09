@@ -287,3 +287,41 @@ const modal =(posts)=>{
  `
  document.getElementById('my_modal_1').showModal();
 }
+
+//search-issus
+async function searchIssue() {
+  const searchText = document.getElementById("searchInput").value
+  const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchText}`)
+  const data = await res.json()
+  showCards(data.data)
+}
+
+function showCards(issues){
+  const container = document.getElementById("card-contener")
+  container.innerHTML = ""
+  issues.forEach(issue => {
+    container.innerHTML += `
+    <div onclick="showModal(${issue.id})" class="card bg-base-100 w-75 h-85 shadow-sm border-t-4 border-green-500 cursor-pointer">
+      <div class="card-body">
+        <div class="flex justify-between">
+          <img class="h-6 w-6" src="./assets/Open-Status.png" alt="">
+          <div class="w-[80px] h-8 rounded-full badge badge-soft badge-error">${issue.priority}</div>
+        </div>
+        <h2 class="card-title">
+          ${issue.title}
+        </h2>
+        <p class="text-[#64748B]">${issue.description}</p>
+        <div class="card-actions">
+          <div class="badge badge-error badge-soft badge-outline">Bug</div>
+          <div class="badge badge-warning badge-soft badge-outline">help wanted</div>
+        </div>
+        <hr class="my-3" style="color:rgba(128, 128, 128, 0.356);">
+        <p class="text-[#64748B]">#${issue.author}</p>
+        <p class="text-[#64748B]">${issue.createdAt}</p>
+      </div>
+      </div> 
+      `
+      const countNum=document.getElementById('count-number');
+      countNum.innerText= container.children.length;
+  })
+}
