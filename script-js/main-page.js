@@ -4,10 +4,15 @@ const tabInactive = ['text-slate-700','border-state-200','text-black'];
 //  all-tab
 
 const allTab = ()=>{
-    const p = 'https://phi-lab-server.vercel.app/api/v1/lab/issues';
-    fetch(p)
-   .then(referce=>referce.json())
-   .then(data=>displayPost(data.data));
+  const loading = document.getElementById("loading")
+    // Loading show
+  loading.classList.remove("hidden")
+  const p = 'https://phi-lab-server.vercel.app/api/v1/lab/issues';
+  fetch(p)
+  .then(referce=>referce.json())
+  .then(data=>displayPost(data.data));
+  // Loading hide
+loading.classList.add("hidden")
    //all-btn-toggle
    const all = document.getElementById('tab-all');
    const open = document.getElementById('tab-open');
@@ -100,10 +105,15 @@ allTab()
 
 //open-tab
 const openTab = ()=>{
-    const p = 'https://phi-lab-server.vercel.app/api/v1/lab/issues';
-    fetch(p)
-   .then(referce=>referce.json())
-   .then(data=>openDisplayPost(data.data));
+  const loading = document.getElementById("loading")
+    // Loading show
+  loading.classList.remove("hidden")
+  const p = 'https://phi-lab-server.vercel.app/api/v1/lab/issues';
+  fetch(p)
+  .then(referce=>referce.json())
+  .then(data=>openDisplayPost(data.data));
+  // Loading hide
+loading.classList.add("hidden")
    //open-btn-toggl
    const all = document.getElementById('tab-all');
    const open = document.getElementById('tab-open');
@@ -186,10 +196,15 @@ posts.forEach(post => {
 
 //closed-tab
 const closeTab = ()=>{
-    const p = 'https://phi-lab-server.vercel.app/api/v1/lab/issues';
-    fetch(p)
-   .then(referce=>referce.json())
-   .then(data=>closeDisplayPost(data.data));
+  const loading = document.getElementById("loading")
+    // Loading show
+  loading.classList.remove("hidden")
+  const p = 'https://phi-lab-server.vercel.app/api/v1/lab/issues';
+  fetch(p)
+  .then(referce=>referce.json())
+  .then(data=>closeDisplayPost(data.data));
+  // Loading hide
+loading.classList.add("hidden")
    // close-btn-toggol
   const open = document.getElementById('tab-open');
   const close = document.getElementById('tab-close');
@@ -290,10 +305,15 @@ const modal =(posts)=>{
 
 //search-issus
 async function searchIssue() {
-  const searchText = document.getElementById("searchInput").value
+  const searchText = document.getElementById("searchInput").value;
+  const loading = document.getElementById("loading")
+    // Loading show
+  loading.classList.remove("hidden")
   const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchText}`)
   const data = await res.json()
-  showCards(data.data)
+  showCards(data.data);
+  // Loading hide
+  loading.classList.add("hidden")
 }
 
 function showCards(issues){
